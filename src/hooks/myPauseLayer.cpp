@@ -18,6 +18,7 @@ void myPauseLayer::customSetup() {
         btn->setID("swap-button");
 
         menu->addChild(btn);
+        menu->updateLayout();
     }
 
 }
