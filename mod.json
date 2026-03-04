@@ -1,0 +1,32 @@
+{
+	"geode": "5.3.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "carbon.level-swap",
+	"name": "Level Swap",
+	"version": "v1.0.0",
+	"developer": "carbon",
+	"description": "Swap levels from anywhere!",
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	},
+	"resources": {
+        "sprites": [
+            "resources/swap-icon.png"
+        ]
+    },
+	"tags": ["gameplay"],
+	"settings": {
+		"swapLevel": {
+			"type": "keybind",
+			"name": "Swap Level",
+			"description": "Press this while playing to swap levels",
+			"default": ";",
+			"category": "gameplay"
+		}
+	}
+}
