@@ -23,7 +23,7 @@ class Swap {
                     }
                     else 
                     {
-                        FLAlertLayer::create("Level Swap", "Can't swap: Can't start on target level. Press escape if you hit swap mid-gameplay.","Ok")->show();
+                        FLAlertLayer::create("Level Swap", "Can't swap: Can't start on target level.","Ok")->show();
                     }
                 }
                 else
