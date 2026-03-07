@@ -9,7 +9,7 @@ class $modify(myLevelInfoLayer, LevelInfoLayer)
     {
         int m_lvlID;
     };
-    
+
     bool init(GJGameLevel* p0, bool p1);
     void onButtonClicked(CCObject*);
 };

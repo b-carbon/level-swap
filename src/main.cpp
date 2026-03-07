@@ -18,7 +18,7 @@ class $modify(PlayLayer)
     {
         if(!PlayLayer::init(p0, p1, p2))
             return false;
-
+        
         addEventListener(KeybindSettingPressedEventV3(GEODE_MOD_ID, "swapLevel"), [this](const Keybind& keybind, bool down, bool repeat,  double timestamp)
         {
             auto currentPlayLayer = static_cast<PlayLayer*>(GameManager::sharedState()->getGameLayer());
@@ -30,5 +30,10 @@ class $modify(PlayLayer)
             }
         });
         return true;
+    }
+    void destructor()
+    {
+        PlayLayer::~PlayLayer();
+        FMODAudioEngine::sharedEngine()->enableMetering();
     }
 };

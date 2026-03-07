@@ -4,6 +4,8 @@
 void myPauseLayer::customSetup() {
     PauseLayer::customSetup();
 
+    log::debug("metering is {}", FMODAudioEngine::sharedEngine()->m_metering);
+
     if(!(GameManager::sharedState()->getGameLayer()->m_level->m_dailyID > 0 ||
         GameManager::sharedState()->getGameLayer()->m_level->m_levelType == GJLevelType::Main ||
         GameManager::sharedState()->getGameLayer()->m_level->m_gauntletLevel))
@@ -27,5 +29,3 @@ void myPauseLayer::onButtonClicked(CCObject*)
 {
     Swap::swap();
 }
-
-//do in future: add keybind for swap

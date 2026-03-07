@@ -32,7 +32,7 @@ class Swap {
                     {
                         Save::setSwappedYet(true);
                         Save::setPrevID(GameManager::sharedState()->m_currentLevelID);
-                        CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.0f, PlayLayer::scene(swapTolvl, false, false)));
+                        CCDirector::sharedDirector()->replaceScene( PlayLayer::scene(swapTolvl, false, false));
                         GameManager::sharedState()->m_currentLevelID = Save::getLevel();
                     }
                     else
