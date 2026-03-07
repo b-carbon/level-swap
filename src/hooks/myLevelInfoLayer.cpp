@@ -8,8 +8,7 @@ bool myLevelInfoLayer::init(GJGameLevel* p0, bool p1)
         return false;
 
     Save::setSwappedYet(false);
-    FMODAudioEngine::sharedEngine()->disableMetering();
-    log::debug("metering is {}", FMODAudioEngine::sharedEngine()->m_metering);
+    FMODAudioEngine::sharedEngine()->disableMetering();;
 
     m_fields->m_lvlID = p0->m_levelID;
 
