@@ -4,9 +4,8 @@
 void myPauseLayer::customSetup() {
     PauseLayer::customSetup();
 
-    if(!(GameManager::sharedState()->getGameLayer()->m_level->m_dailyID > 0 ||
-        GameManager::sharedState()->getGameLayer()->m_level->m_levelType == GJLevelType::Main ||
-        GameManager::sharedState()->getGameLayer()->m_level->m_gauntletLevel))
+    auto currentLevel = GameManager::sharedState()->getGameLayer()->m_level;
+    if(!(currentLevel->m_dailyID > 0 || currentLevel->m_levelType == GJLevelType::Main || currentLevel->m_gauntletLevel))
     {
         auto menu = this->getChildByID("left-button-menu");
 

@@ -7,6 +7,4 @@ class $modify(myPauseLayer, PauseLayer) {
 
     void customSetup();
     void onButtonClicked(CCObject* );
-
-    void getlvlID(CCObject* );
 };
