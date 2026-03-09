@@ -16,7 +16,7 @@ class Swap {
                 {
                     Save::setSwappedYet(false);
                     GJGameLevel* swapFromlvl = static_cast<GJGameLevel*>(GameLevelManager::sharedState()->m_onlineLevels->objectForKey(std::to_string(Save::getPrevID())));
-                    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(1.0f, PlayLayer::scene(swapFromlvl, false, false)));
+                    CCDirector::sharedDirector()->replaceScene(PlayLayer::scene(swapFromlvl, false, false));
                     GameManager::sharedState()->m_currentLevelID = Save::getPrevID();
                 }
                 else 
@@ -30,7 +30,7 @@ class Swap {
                 {
                     Save::setSwappedYet(true);
                     Save::setPrevID(GameManager::sharedState()->m_currentLevelID);
-                    CCDirector::sharedDirector()->replaceScene( PlayLayer::scene(swapTolvl, false, false));
+                    CCDirector::sharedDirector()->replaceScene(PlayLayer::scene(swapTolvl, false, false));
                     GameManager::sharedState()->m_currentLevelID = Save::getLevel();
                 }
                 else
