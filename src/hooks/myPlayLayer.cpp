@@ -5,14 +5,16 @@ bool myPlayLayer::init(GJGameLevel* level, bool useReplay, bool dontCreateObject
     if(!PlayLayer::init(level, useReplay, dontCreateObjects))
             return false;
         
-        addEventListener(KeybindSettingPressedEventV3(GEODE_MOD_ID, "swapLevel"), [this](const Keybind& keybind, bool down, bool repeat,  double timestamp)
+        this->addEventListener(KeybindSettingPressedEventV3(GEODE_MOD_ID, "swapLevel"), [this](const Keybind& keybind, bool down, bool repeat,  double timestamp)
         {
-            auto currentPlayLayer = static_cast<PlayLayer*>(GameManager::sharedState()->getGameLayer());
-            if (down && !repeat && currentPlayLayer != nullptr && this->m_level->m_dailyID <= 0 && !this->m_level->m_gauntletLevel && this->m_level->m_levelType != GJLevelType::Main)
+            if (down && !repeat)
             {
-                if(!currentPlayLayer->m_isPaused)
-                    currentPlayLayer->pauseGame(false);
-                Swap::swap();
+                if(this->m_level->m_dailyID <= 0 && !this->m_level->m_gauntletLevel && this->m_level->m_levelType != GJLevelType::Main)
+                {
+                    if(!this->m_isPaused)
+                        this->pauseGame(false);
+                    Swap::swap();
+                }
             }
         });
     return true;
